@@ -13,9 +13,17 @@ export default {
       age: ''
     }
   },
+  methods: {
+    onload: () => {
+      this.$Api.Get().then( res => {
+        this.$Toast(res.data)
+      }).catch( error => {
+        this.$Toast(error.data)
+      })
+    }
+  },
   created: () => {
-    let api = process.env.BASE_API
-    console.log(api)
+    onload()
   }
 }
 </script>

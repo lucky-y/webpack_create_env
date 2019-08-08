@@ -3,9 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Axios from './request/http'
+import Api from './request/api'
+import { Toast } from 'vant'
 
 Vue.config.productionTip = false
-
+Vue.use(Axios)
+Vue.use(Api)
+Vue.use(Toast)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
